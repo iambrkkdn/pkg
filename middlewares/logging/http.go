@@ -28,7 +28,7 @@ type loggingResponseWriter struct {
 	statusCode int
 }
 
-func HTTPRequestLoggingMiddleware(logger *zap.Logger) Middleware {
+func HTTPLoggingMiddleware(logger *zap.Logger) Middleware {
 	return func(next http.Handler) Handler {
 		return HandlerFunc(func(w http.ResponseWriter, r *http.Request) error {
 			start := time.Now()
